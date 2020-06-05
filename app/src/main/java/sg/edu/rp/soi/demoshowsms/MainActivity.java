@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("content://sms");
                 String[] reqCols = new String[]{"date", "address", "body", "type"};
                 ContentResolver cr = getContentResolver();
-                String filter = "body LIKE ? AND body LIKE ?";
-                String[] filterArgs = {"%late%", "%min%"};
+                String filter = "body LIKE ?";
+               String[] filterArgs = {"%hello%"};
                 Cursor cursor = cr.query(uri, reqCols, filter, filterArgs, null);
                 String smsBody = "";
                 if (cursor.moveToFirst()) {
